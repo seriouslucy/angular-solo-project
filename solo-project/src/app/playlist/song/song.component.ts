@@ -1,5 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { SongService } from '../../shared/services/song.service';
+import { Song } from '../../shared/models/song.model';
 
 @Component({
   selector: 'app-song',
@@ -9,5 +10,11 @@ import { SongService } from '../../shared/services/song.service';
 })
 export class SongComponent {
 songService = inject(SongService)
+songs = this.songService.songs
+data = input<Song>()
 
+removeHandler() {
+  console.log('clicked')
+  this.songService.removeSong(this.data()!.title)
+}
 }

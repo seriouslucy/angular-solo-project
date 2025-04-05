@@ -1,23 +1,11 @@
-<!-- <div class="bubble-divider"><img src="bubbles.gif" alt="bubbles"><img src="bubbles.gif" alt="bubbles"><img src="bubbles.gif" alt="bubbles"><img src="bubbles.gif" alt="bubbles"><img src="bubbles.gif" alt="bubbles"><img
-src="bubbles.gif" alt="bubbles"><img src="bubbles.gif" alt="bubbles"></div> -->
 
 <div class="container">
 <header><img src="icon4.jpg" alt="playlist-icon" class="playlist-icon"><h1>Your Playlist</h1></header>
 
+@for (song of songs(); track song.title) {
+  <app-song [data]="song" />
+}
 
-<app-song>
-  <div>
-    <ul>
-      @for (song of songs(); track $index) {
-        <li>
-          {{ song.title }} - {{ song.artist }} - {{ song.album }} - {{song.year}} <button (click)="removeHandler()" class="danger-btn">X</button>
-        </li>
-      }
-
-    </ul>
-  </div>
-
-</app-song>
 
 <app-new-song />
 

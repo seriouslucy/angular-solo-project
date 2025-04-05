@@ -1,3 +1,9 @@
 <div class="song-card">
-  <h3><ng-content></ng-content></h3>
+  <div>
+    <ul>
+      <li>
+        {{ data()!.title }} - {{ data()!.artist }} - {{ data()!.album }} - {{ data()!.year}} <button (click)="removeHandler()" class="danger-btn">X</button>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -1,0 +1,17 @@
+<div class="bubble-divider">
+  <img src="bubbles2.gif" alt="bubbles"><img src="bubbles2.gif" alt="bubbles"><img src="bubbles2.gif" alt="bubbles"><img src="bubbles2.gif" alt="bubbles"><img src="bubbles2.gif" alt="bubbles">
+</div>
+
+<div class="new-song">
+  <form (ngSubmit)="addSongHandler()">
+    <input type="text" name="title" placeholder="song title..." [(ngModel)]="title">
+
+    <input type="text" name="artist" placeholder="artist..." [(ngModel)]="artist">
+
+    <input type="text" name="album" placeholder="album title..." [(ngModel)]="album">
+
+    <input type="number" name="year" placeholder="year..." [(ngModel)]="year">
+    <button>Add Song</button>
+  </form>
+</div>
+
