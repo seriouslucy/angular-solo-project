@@ -1,0 +1,56 @@
+.container {
+margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+  width: 1000px;
+
+
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: white;
+  background-image: linear-gradient(rgba(24, 85, 136, 0.5), rgba(170, 238, 255, 0.5));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 5px;
+}
+
+.danger-btn {
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: tomato;
+  color: white;
+
+}
+
+.danger-btn:hover {
+  background-color: red;
+}
+
+.bubble-divider {
+  text-align: center;
+
+}
+
+.playlist-icon {
+  width: 200px;
+}
+
+header {
+  font-family: 'Virtual';
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 2em;
+  font-size: large;
+}

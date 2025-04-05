@@ -1,16 +1,8 @@
-.header-css {
-  display: flex;
-  align-items: center;
-  gap: 2%;
-  padding: .5em;
+.footer {
+  font-family: 'Virtual';
+  text-align: center;
+  color: white;
   box-shadow: 0px 1px 4px -2px #333;
   text-shadow: 0px -1px #333;
   background-image: linear-gradient(rgba(24, 85, 136, 0.5), rgba(170, 238, 255, 0.5));
-  border-radius: 15px;
-
-}
-
-h1 {
-  color: white;
-  font-family: 'Virtual';
 }
