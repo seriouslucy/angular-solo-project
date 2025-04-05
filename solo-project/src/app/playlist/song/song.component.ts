@@ -17,4 +17,8 @@ removeHandler() {
   console.log('clicked')
   this.songService.removeSong(this.data()!.title)
 }
+
+editHandler() {
+  console.log('clicked')
+}
 }

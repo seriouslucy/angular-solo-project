@@ -2,7 +2,11 @@
     <ul>
       <li>
         <img src="disc.gif" alt="disc">
-        {{ data()!.title }} - {{ data()!.artist }} - {{ data()!.album }} - {{ data()!.year}} <button (click)="removeHandler()" class="danger-btn">X</button>
-      </li>
+        {{ data()!.title }} - {{ data()!.artist }} - {{ data()!.album }} - {{ data()!.year}}
+        <div class="da-buttons">
+        <button (click)="editHandler()" class="edit-btn">Edit</button>
+        <button (click)="removeHandler()" class="danger-btn">X</button>
+      </div>
+    </li>
     </ul>
 </div>
