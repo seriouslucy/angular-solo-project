@@ -26,3 +26,11 @@ header {
   font-size: large;
   transition-duration: 0.4s;
 }
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+

@@ -4,6 +4,7 @@ import { SongComponent } from './song/song.component';
 import { NewSongComponent } from "./new-song/new-song.component";
 
 
+
 @Component({
   selector: 'app-playlist',
   imports: [SongComponent, NewSongComponent],
@@ -13,6 +14,6 @@ import { NewSongComponent } from "./new-song/new-song.component";
 export class PlaylistComponent {
   songService = inject(SongService)
   songs = this.songService.getSongs()
-
+  user = 'Lucy';
 
 }

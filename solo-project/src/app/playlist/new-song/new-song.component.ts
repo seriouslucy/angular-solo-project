@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './new-song.component.css'
 })
 export class NewSongComponent {
+  
   songService = inject(SongService)
   songs = signal<Song[]>
   title = '';
