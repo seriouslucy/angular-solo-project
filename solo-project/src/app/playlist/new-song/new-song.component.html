@@ -1,19 +1,23 @@
+@if (!isEditing()) {
+  <header><h1>Add to Playlist</h1></header>
+} @else {
+  <header><h1>Edit current song</h1></header>
+}
 
-<header><h1>Add to Playlist</h1></header>
 <div class="new-song">
-  <form (ngSubmit)="addSongHandler()" class="form-css">
+  <form #form (submit)="songButtonHandler(title.value, artist.value, album.value, +year.value); $event.preventDefault()" class="form-css">
 
-    <div class="song-form">
-    <input type="text" name="title" placeholder="song title..." [(ngModel)]="title" class="input-css1">
+ <div class="song-form">
+  <input type="text" name="title" placeholder="song title..." [value]="songToEdit()?.title" #title class="input-css1">
 
-    <input type="text" name="artist" placeholder="artist..." [(ngModel)]="artist" class="input-css1">
+    <input type="text" name="artist" placeholder="artist..." [value]="songToEdit()?.artist" #artist class="input-css1">
 
-    <input type="text" name="album" placeholder="album title..." [(ngModel)]="album" class="input-css1">
+    <input type="text" name="album" placeholder="album title..." [value]="songToEdit()?.album" #album class="input-css1">
 
-    <input type="number" name="year" placeholder="year..." [(ngModel)]="year" class="input-css">
+    <input type="number" name="year" placeholder="year..." [value]="songToEdit()?.year" #year class="input-css">
 
 
-    <button class="add-btn-css">Add Song</button>
+    <button type="submit" class="add-btn-css">{{ isEditing()? 'Edit song' : 'Add song'}}</button>
   </div>
   </form>
 </div>

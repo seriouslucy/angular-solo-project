@@ -14,6 +14,6 @@ import { NewSongComponent } from "./new-song/new-song.component";
 export class PlaylistComponent {
   songService = inject(SongService)
   songs = this.songService.getSongs()
-  user = 'Lucy';
+  
 
 }
