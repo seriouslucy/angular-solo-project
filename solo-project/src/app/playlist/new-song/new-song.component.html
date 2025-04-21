@@ -5,7 +5,7 @@
 }
 
 <div class="new-song">
-  <form #form (submit)="songButtonHandler(title.value, artist.value, album.value, +year.value); $event.preventDefault()" class="form-css">
+  <form #form (submit)="songButtonHandler(title.value, artist.value, album.value, year.value); $event.preventDefault()" class="form-css">
 
  <div class="song-form">
   <input type="text" name="title" placeholder="song title..." [value]="songToEdit()?.title" #title class="input-css1">

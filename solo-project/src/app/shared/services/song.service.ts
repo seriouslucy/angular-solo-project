@@ -13,42 +13,42 @@ export class SongService {
       title: 'Miss Misery',
       artist: 'Elliott Smith',
       album: 'Single',
-      year: 1998,
+      year: '1998',
       id: '2025-04-07T12:00:00.000Z',
     },
     {
       title: 'Silver Springs',
       artist: 'Fleetwood Mac',
       album: 'Single',
-      year: 1977,
+      year: '1977',
       id: '2025-04-07T12:00:01.000Z',
     },
     {
       title: 'Nude',
       artist: 'Radiohead',
       album: 'In Rainbows',
-      year: 2007,
+      year: '2007',
       id: '2025-04-07T12:00:02.000Z',
     },
     {
       title: 'Bloodstream',
       artist: 'Stateless',
       album: 'Stateless',
-      year: 2007,
+      year: '2007',
       id: '2025-04-07T12:00:03.000Z',
     },
     {
       title: 'Traces',
       artist: 'Red Vox',
       album: 'Afterthoughts',
-      year: 2023,
+      year: '2023',
       id: '2025-04-07T12:00:04.000Z',
     },
     {
       title: 'Stylo',
       artist: 'Gorillaz',
       album: 'Plastic Beach',
-      year: 2010,
+      year: '2010',
       id: '2025-04-07T12:00:05.000Z',
     },
   ]);
@@ -62,7 +62,7 @@ export class SongService {
     this.songs.update((s) => s.filter((sg) => sg.title !== t));
   }
 
-  addSong(t: string, a: string, ab: string, y: number, i: string) {
+  addSong(t: string, a: string, ab: string, y: string, i: string) {
     console.log('song added');
     this.songs.update((s) => [
       ...s,
@@ -74,7 +74,7 @@ export class SongService {
     title: string,
     artist: string,
     album: string,
-    year: number,
+    year: string,
     id: string
   ) {
     this.songToEdit.set({

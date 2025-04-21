@@ -1,7 +1,7 @@
-import { AfterViewChecked, Component, effect, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { AfterViewChecked, Component, effect, ElementRef, inject, signal, ViewChild, viewChild } from '@angular/core';
 import { Song } from '../../shared/models/song.model';
 import { SongService } from '../../shared/services/song.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-song',
@@ -11,9 +11,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class NewSongComponent {
   songService = inject(SongService);
-  form = viewChild<ElementRef<HTMLFormElement>>('form')
   songToEdit = this.songService.songToEdit;
   isEditing = this.songService.isEditing;
+ form = viewChild<ElementRef<HTMLFormElement>>('form')
+  year = null
 
   songs = signal<Song[]>;
 
@@ -24,7 +25,14 @@ export class NewSongComponent {
     });
   }
 
-  songButtonHandler(title: string, artist: string, album: string, year: number) {
+
+  formReset() {
+    this.songToEdit.set(null)
+    this.form()!.nativeElement.reset()
+
+  }
+
+  songButtonHandler(title: string, artist: string, album: string, year: string) {
     if (!this.isEditing()) {
       console.log('connected');
       let id = String(new Date());
@@ -36,7 +44,7 @@ export class NewSongComponent {
         year,
         id
       );
-     this.form()!.nativeElement.reset()
+    this.formReset()
     } else {
       this.songService.editSong(
         title,
@@ -45,8 +53,10 @@ export class NewSongComponent {
         year,
         this.songToEdit()!.id
       );
+      this.formReset()
+      this.isEditing.set(false);
+
+
     }
-    this.isEditing.set(false)
-    this.form()!.nativeElement.reset()
   }
 }
